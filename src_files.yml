@@ -1,0 +1,11 @@
+axiluart:
+  incdirs:
+    - ../register_interface/include
+    - ../register_interface/vendor/lowrisc_opentitan/include
+  files:
+    - rtl/axis_fifo.v
+    - rtl/i2c_init.v
+    - rtl/i2c_master.v
+    - rtl/i2c_master_axil.v
+  vlog_opts:
+    - -L register_interface_lib
