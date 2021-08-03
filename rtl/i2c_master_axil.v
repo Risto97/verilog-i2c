@@ -47,7 +47,7 @@ module i2c_master_axil #
     /*
      * Host interface
      */
-    input  wire [3:0]  s_axil_awaddr,
+    input  wire [31:0]  s_axil_awaddr,
     input  wire [2:0]  s_axil_awprot,
     input  wire        s_axil_awvalid,
     output wire        s_axil_awready,
@@ -58,7 +58,7 @@ module i2c_master_axil #
     output wire [1:0]  s_axil_bresp,
     output wire        s_axil_bvalid,
     input  wire        s_axil_bready,
-    input  wire [3:0]  s_axil_araddr,
+    input  wire [31:0]  s_axil_araddr,
     input  wire [2:0]  s_axil_arprot,
     input  wire        s_axil_arvalid,
     output wire        s_axil_arready,
