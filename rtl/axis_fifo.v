@@ -69,6 +69,7 @@ module axis_fifo #
     // Drop frames marked bad
     // Requires FRAME_FIFO set
     parameter DROP_BAD_FRAME = 0,
+    parameter ADDR_WIDTH = (KEEP_ENABLE && KEEP_WIDTH > 1) ? $clog2(DEPTH/KEEP_WIDTH) : $clog2(DEPTH),
     // Drop incoming frames when full
     // When set, s_axis_tready is always asserted
     // Requires FRAME_FIFO set
@@ -112,7 +113,6 @@ module axis_fifo #
     output wire                   status_empty
 );
 
-parameter ADDR_WIDTH = (KEEP_ENABLE && KEEP_WIDTH > 1) ? $clog2(DEPTH/KEEP_WIDTH) : $clog2(DEPTH);
 
 // check configuration
 initial begin
